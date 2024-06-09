@@ -29,7 +29,8 @@
                 Level = "Quản trị viên",
                 SecurityStamp = new Guid().ToString("D"),
                 PasswordHash = "adminokvip".Hash(),
-                CreatedAt = ApplicationExtensions.NOW
+                CreatedAt = ApplicationExtensions.NOW,
+                IsAdmin = true
             };
             return admin;
         }
