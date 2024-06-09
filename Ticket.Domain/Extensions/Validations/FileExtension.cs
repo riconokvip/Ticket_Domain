@@ -1,4 +1,6 @@
-﻿namespace Ticket.Domain.Extensions
+﻿using Microsoft.AspNetCore.Http;
+
+namespace Ticket.Domain.Extensions
 {
     /// <summary>
     /// Xác thực tệp
