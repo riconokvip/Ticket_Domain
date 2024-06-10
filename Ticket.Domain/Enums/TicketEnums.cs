@@ -14,7 +14,16 @@
         [EnumMember(Value = "Hủy")]
         Cancel = 3,
 
+        [EnumMember(Value = "Triển khai")]
+        Start = 4,
+
+        [EnumMember(Value = "Tạm dừng")]
+        Pending = 5,
+
+        [EnumMember(Value = "Đánh giá")]
+        Review = 6,
+
         [EnumMember(Value = "Hoàn thành")]
-        Complete = 4
+        Complete = 7
     }
 }

@@ -17,11 +17,6 @@
         public string TicketContent { get; set; }
 
         /// <summary>
-        /// Id người nhận
-        /// </summary>
-        public string ToUserId { get; set; }
-
-        /// <summary>
         /// Trạng thái
         /// </summary>
         public TicketEnums TicketStatus { get; set; } = TicketEnums.Init;
