@@ -6,13 +6,16 @@
         Create = 0,
 
         [EnumMember(Value = "Xem")]
-        Read = 1,
+        ReadList = 1,
+
+        [EnumMember(Value = "Xem")]
+        ReadDetail = 2,
 
         [EnumMember(Value = "Cập nhật")]
-        Update = 2,
+        Update = 3,
 
         [EnumMember(Value = "Xóa")]
-        Delete = 3
+        Delete = 4
     }
 
     public enum ResourceEnums
@@ -23,25 +26,22 @@
         [EnumMember(Value = "Yêu cầu")]
         Ticket = 1,
 
-        [EnumMember(Value = "Công việc")]
-        Work = 2,
-
         [EnumMember(Value = "Nhóm công việc")]
-        WorkSpace = 3,
+        WorkSpace = 2,
 
         [EnumMember(Value = "Thành viên nhóm công việc")]
-        WorkSpaceMember = 4,
+        WorkSpaceMember = 3,
 
         [EnumMember(Value = "Dự án")]
-        Project = 5,
+        Project = 4,
 
         [EnumMember(Value = "Thành viên dự án")]
-        ProjectMember = 6,
+        ProjectMember = 5,
 
         [EnumMember(Value = "Nhiệm vụ")]
-        ProjectTask = 7,
+        ProjectTask = 6,
 
         [EnumMember(Value = "Nhiệm vụ con")]
-        ProjectSubTask = 8
+        ProjectSubTask = 7
     }
 }
