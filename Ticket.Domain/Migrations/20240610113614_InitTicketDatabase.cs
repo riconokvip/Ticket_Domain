@@ -18,7 +18,6 @@ namespace Ticket.Domain.Migrations
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     FromUserId = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     TicketContent = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ToUserId = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     TicketStatus = table.Column<int>(type: "int", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -39,6 +38,8 @@ namespace Ticket.Domain.Migrations
                     Permission = table.Column<int>(type: "int", nullable: false),
                     Resource = table.Column<int>(type: "int", nullable: false),
                     UserId = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Claim = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PermissionName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
@@ -126,6 +127,8 @@ namespace Ticket.Domain.Migrations
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     ProjectName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     WorkSpaceId = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ProjectPriority = table.Column<int>(type: "int", nullable: true),
+                    EstimateTime = table.Column<DateTime>(type: "datetime2", nullable: true),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
@@ -176,25 +179,6 @@ namespace Ticket.Domain.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_work_ProjectTasks", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "work_Works",
-                columns: table => new
-                {
-                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    FromUserId = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    WorkContent = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    WorkStatus = table.Column<int>(type: "int", nullable: false),
-                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    UpdatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    IsDeleted = table.Column<bool>(type: "bit", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_work_Works", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -283,12 +267,6 @@ namespace Ticket.Domain.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_work_Works_Id",
-                table: "work_Works",
-                column: "Id",
-                unique: true);
-
-            migrationBuilder.CreateIndex(
                 name: "IX_work_WorkSpaceMembers_Id",
                 table: "work_WorkSpaceMembers",
                 column: "Id",
@@ -327,9 +305,6 @@ namespace Ticket.Domain.Migrations
 
             migrationBuilder.DropTable(
                 name: "work_ProjectTasks");
-
-            migrationBuilder.DropTable(
-                name: "work_Works");
 
             migrationBuilder.DropTable(
                 name: "work_WorkSpaceMembers");

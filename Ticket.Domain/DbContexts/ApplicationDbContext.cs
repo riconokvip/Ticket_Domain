@@ -16,7 +16,6 @@
 
             builder.Entity<TicketEntities>().HasIndex(u => u.Id).IsUnique();
 
-            builder.Entity<WorkEntities>().HasIndex(u => u.Id).IsUnique();
             builder.Entity<WorkSpaceEntities>().HasIndex(u => u.Id).IsUnique();
             builder.Entity<WorkSpaceMemberEntities>().HasIndex(u => u.Id).IsUnique();
 
@@ -32,7 +31,6 @@
 
         public virtual DbSet<TicketEntities> Tickets { get; set; }
 
-        public virtual DbSet<WorkEntities> Works { get; set; }
         public virtual DbSet<WorkSpaceEntities> WorkSpaces { get; set; }
         public virtual DbSet<WorkSpaceMemberEntities> WorkSpaceMembers { get; set; }
 

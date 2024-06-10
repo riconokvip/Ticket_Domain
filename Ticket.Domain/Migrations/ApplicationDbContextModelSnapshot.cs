@@ -317,6 +317,9 @@ namespace Ticket.Domain.Migrations
                     b.Property<int>("Permission")
                         .HasColumnType("int");
 
+                    b.Property<string>("PermissionName")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("Resource")
                         .HasColumnType("int");
 
@@ -383,45 +386,6 @@ namespace Ticket.Domain.Migrations
                         .IsUnique();
 
                     b.ToTable("user_UserTokens");
-                });
-
-            modelBuilder.Entity("Ticket.Domain.Entities.WorkEntities", b =>
-                {
-                    b.Property<string>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("nvarchar(450)")
-                        .HasColumnName("Id");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FromUserId")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime?>("UpdatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("UpdatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("WorkContent")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("WorkStatus")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("Id")
-                        .IsUnique();
-
-                    b.ToTable("work_Works");
                 });
 
             modelBuilder.Entity("Ticket.Domain.Entities.WorkSpaceEntities", b =>
