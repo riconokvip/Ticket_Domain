@@ -5,10 +5,10 @@
         [EnumMember(Value = "Tạo")]
         Create = 0,
 
-        [EnumMember(Value = "Xem")]
+        [EnumMember(Value = "Xem danh sách")]
         ReadList = 1,
 
-        [EnumMember(Value = "Xem")]
+        [EnumMember(Value = "Xem chi tiết")]
         ReadDetail = 2,
 
         [EnumMember(Value = "Cập nhật")]
