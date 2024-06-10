@@ -17,13 +17,18 @@
         public ResourceEnums Resource { get; set; }
 
         /// <summary>
-        /// Claim được sinh ra từ Permission và Resource
+        /// Id người dùng
+        /// </summary>
+        public string UserId { get; set; }
+
+        /// <summary>
+        /// Claim
         /// </summary>
         public string Claim { get; set; }
 
         /// <summary>
-        /// Id người dùng
+        /// Tên quyền
         /// </summary>
-        public string UserId { get; set; }
+        public string PermissionName { get; set; }
     }
 }
