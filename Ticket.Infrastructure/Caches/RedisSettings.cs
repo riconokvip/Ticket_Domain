@@ -8,15 +8,16 @@
         {
             AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(EXPIRED_TIME)
         };
-
-        public static string EsKey(string name) => $"es_{name}";
     }
 
-    public static class RedisKeys
+    public static class EsKeys
     {
         public static string Users(int pageIndex, int pageSize, string text) 
-            => $"users_{(string.IsNullOrEmpty(text) ? "null" : text)}_{pageIndex}_{pageSize}";
+            => $"es_users_{(string.IsNullOrEmpty(text) ? "null" : text)}_{pageIndex}_{pageSize}";
+    }
 
-        public static string EsUsers = "users";
+    public static class SyncKeys
+    {
+        public static string Users = "sync_users";
     }
 }

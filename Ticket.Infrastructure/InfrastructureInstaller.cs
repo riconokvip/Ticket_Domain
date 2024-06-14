@@ -14,7 +14,6 @@
 
             services.AddSingleton<IElasticClient>(new ElasticClient(settings));
             services.AddScoped(typeof(IEsRepo<>), typeof(EsRepo<>));
-            Console.WriteLine("Init Es");
         }
 
         public static void AddRedisCaches(this IServiceCollection services, IConfiguration configuration)
@@ -27,7 +26,6 @@
             });
 
             services.AddScoped<IDistributedCacheService, DistributedCacheService>();
-            Console.WriteLine("Init Redis");
         }
     }
 }
